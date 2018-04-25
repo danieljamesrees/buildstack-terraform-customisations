@@ -78,7 +78,7 @@ resource "google_compute_instance_group" "uaa-router-lb-2" {
 }
 
 resource "google_compute_backend_service" "uaa-router-lb-backend-service" {
-  name        = "uaa-router-lb"
+  name        = "${var.env_id}-uaa-router-lb"
   port_name   = "https"
   protocol    = "HTTPS"
   timeout_sec = 900

@@ -78,7 +78,7 @@ resource "google_compute_instance_group" "gerrit-router-lb-2" {
 }
 
 resource "google_compute_backend_service" "gerrit-router-lb-backend-service" {
-  name        = "gerrit-router-lb"
+  name        = "${var.env_id}-gerrit-router-lb"
   port_name   = "http"
   protocol    = "HTTP"
   timeout_sec = 900

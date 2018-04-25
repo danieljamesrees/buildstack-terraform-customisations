@@ -78,7 +78,7 @@ resource "google_compute_instance_group" "jenkins-router-lb-2" {
 }
 
 resource "google_compute_backend_service" "jenkins-router-lb-backend-service" {
-  name        = "jenkins-router-lb"
+  name        = "${var.env_id}-jenkins-router-lb"
   port_name   = "http"
   protocol    = "HTTP"
   timeout_sec = 900

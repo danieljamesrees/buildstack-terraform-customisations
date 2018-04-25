@@ -78,7 +78,7 @@ resource "google_compute_instance_group" "sonar-router-lb-2" {
 }
 
 resource "google_compute_backend_service" "sonar-router-lb-backend-service" {
-  name        = "sonar-router-lb"
+  name        = "${var.env_id}-sonar-router-lb"
   port_name   = "http"
   protocol    = "HTTP"
   timeout_sec = 900

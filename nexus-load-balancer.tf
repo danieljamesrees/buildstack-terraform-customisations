@@ -78,7 +78,7 @@ resource "google_compute_instance_group" "nexus-router-lb-2" {
 }
 
 resource "google_compute_backend_service" "nexus-router-lb-backend-service" {
-  name        = "nexus-router-lb"
+  name        = "${var.env_id}-nexus-router-lb"
   port_name   = "http"
   protocol    = "HTTP"
   timeout_sec = 900
